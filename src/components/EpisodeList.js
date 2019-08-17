@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
-import LocationCard from './LocationCard.js';
+import EpisodeCard from './EpisodeCard.js';
 
-export default function LocationsList() {
-    const [locations, setLocations] = useState([])
+export default function EpisodeList() {
+    const [episodes, setEpisodes] = useState([])
     
     useEffect(() => {
         // TODO: Add AJAX/API Request here - must run in `useEffect`
         //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-        axios.get("https://rickandmortyapi.com/api/location/")
+        axios.get("https://rickandmortyapi.com/api/episode/")
           .then((res) => {
-            setLocations(res.data.results);
+            setEpisodes(res.data.results);
+            console.log(res.data.results);
           })
           .catch((err) => {
             console.log(err);
@@ -19,8 +20,8 @@ export default function LocationsList() {
 
       return(
           <>
-            {locations.map((location) => {
-                return <LocationCard locationAttrs={location} />
+            {episodes.map((episode) => {
+                return <EpisodeCard episodeAttrs={episode} />
             })}
           </>
       )

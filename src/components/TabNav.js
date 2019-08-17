@@ -2,6 +2,8 @@ import React from "react";
 import { Tab, Menu, Icon } from "semantic-ui-react";
 import { NavLink } from "react-router-dom";
 
+
+
 // TODO: Add missing tabs below
 const panes = [
     { menuItem: 'Characters', render: () => <Tab.Pane>Tab 1 Content</Tab.Pane> },
